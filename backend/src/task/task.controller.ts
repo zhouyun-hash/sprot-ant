@@ -64,4 +64,14 @@ export class TaskController {
   publish(@Param('id', ParseIntPipe) id: number) {
     return this.taskService.publish(id);
   }
+
+  @Post(':id/cancel')
+  cancel(@Param('id', ParseIntPipe) id: number) {
+    return this.taskService.cancel(id);
+  }
+
+  @Post(':id/finish')
+  finish(@Param('id', ParseIntPipe) id: number) {
+    return this.taskService.finish(id);
+  }
 }

@@ -46,6 +46,10 @@ export class Score {
   @Column({ name: 'review_remark', type: 'varchar', length: 255, nullable: true })
   reviewRemark: string | null;
 
+  /** AI 原始推理数据 JSON */
+  @Column({ name: 'ai_raw_data', type: 'json', nullable: true })
+  aiRawData: Record<string, any> | null;
+
   /** 0=未上报 1=已上报 2=上报失败 */
   @Column({ name: 'sync_status', type: 'tinyint', unsigned: true, default: 0 })
   syncStatus: number;

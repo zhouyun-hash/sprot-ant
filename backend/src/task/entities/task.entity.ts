@@ -6,7 +6,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-export type TaskStatus = 'draft' | 'ongoing' | 'finished';
+export type TaskStatus = 'draft' | 'ongoing' | 'finished' | 'cancelled';
 
 @Entity('task')
 export class Task {

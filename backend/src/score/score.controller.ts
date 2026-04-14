@@ -36,6 +36,14 @@ export class ScoreController {
     return this.scoreService.create(dto, this.actor(req));
   }
 
+  @Post('upsert')
+  upsert(
+    @Body() dto: CreateScoreDto,
+    @Req() req: Request & { user: { id: number; role: string } },
+  ) {
+    return this.scoreService.upsert(dto, this.actor(req));
+  }
+
   @Get('export')
   @Header(
     'Content-Type',

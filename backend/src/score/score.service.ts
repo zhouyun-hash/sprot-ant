@@ -87,6 +87,7 @@ export class ScoreService {
         project: item.project,
         result: item.result,
         unit: item.unit,
+        aiRawData: item.aiRawData ?? null,
         reviewStatus: 'pending',
       });
       saved.push(await this.scoreRepo.save(entity));
@@ -95,6 +96,46 @@ export class ScoreService {
       items: await Promise.all(saved.map((s) => this.findOne(s.id, user))),
       total: saved.length,
     };
+  }
+
+  /**
+   * 按 studentId + taskId + project 做幂等插入或更新。
+   * 已有记录则更新 result/unit/aiRawData，否则新建。
+   */
+  async upsert(dto: CreateScoreDto, user: RequestUser) {
+    await this.ensureTaskExists(dto.taskId);
+    await this.ensureStudentExists(dto.studentId);
+    await this.assertTeacherCanAccessStudentSchool(user, dto.studentId);
+
+    const existing = await this.scoreRepo.findOne({
+      where: {
+        studentId: dto.studentId,
+        taskId: dto.taskId,
+        project: dto.project,
+      },
+    });
+
+    if (existing) {
+      existing.result = dto.result;
+      existing.unit = dto.unit;
+      if (dto.aiRawData !== undefined) {
+        existing.aiRawData = dto.aiRawData ?? null;
+      }
+      await this.scoreRepo.save(existing);
+      return this.findOne(existing.id, user);
+    }
+
+    const entity = this.scoreRepo.create({
+      taskId: dto.taskId,
+      studentId: dto.studentId,
+      project: dto.project,
+      result: dto.result,
+      unit: dto.unit,
+      aiRawData: dto.aiRawData ?? null,
+      reviewStatus: 'pending',
+    });
+    const saved = await this.scoreRepo.save(entity);
+    return this.findOne(saved.id, user);
   }
 
   async findAll(query: QueryScoreDto, user: RequestUser) {
@@ -331,6 +372,7 @@ export class ScoreService {
       unit: row.unit,
       reviewStatus: row.reviewStatus,
       reviewRemark: row.reviewRemark,
+      aiRawData: row.aiRawData,
       createdAt: row.createdAt,
       updatedAt: row.updatedAt,
       task: row.task

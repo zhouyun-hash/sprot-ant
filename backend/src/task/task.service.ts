@@ -98,7 +98,39 @@ export class TaskService {
     if (!row) {
       throw new NotFoundException('任务不存在');
     }
+    if (row.status === 'cancelled') {
+      throw new BadRequestException('已取消的任务不能发布');
+    }
+    if (row.status === 'finished') {
+      throw new BadRequestException('已完成的任务不能重新发布');
+    }
     row.status = 'ongoing';
+    await this.taskRepo.save(row);
+    return this.findOne(id);
+  }
+
+  async cancel(id: number) {
+    const row = await this.taskRepo.findOne({ where: { id } });
+    if (!row) {
+      throw new NotFoundException('任务不存在');
+    }
+    if (row.status === 'finished') {
+      throw new BadRequestException('已完成的任务不能取消');
+    }
+    row.status = 'cancelled';
+    await this.taskRepo.save(row);
+    return this.findOne(id);
+  }
+
+  async finish(id: number) {
+    const row = await this.taskRepo.findOne({ where: { id } });
+    if (!row) {
+      throw new NotFoundException('任务不存在');
+    }
+    if (row.status !== 'ongoing') {
+      throw new BadRequestException('仅进行中的任务可以标记完成');
+    }
+    row.status = 'finished';
     await this.taskRepo.save(row);
     return this.findOne(id);
   }

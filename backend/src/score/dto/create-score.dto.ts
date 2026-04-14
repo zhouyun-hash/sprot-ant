@@ -36,6 +36,9 @@ export class CreateScoreItemDto {
   @IsNotEmpty()
   @Length(1, 32)
   unit: string;
+
+  @IsOptional()
+  aiRawData?: Record<string, any>;
 }
 
 export class CreateScoreDto extends CreateScoreItemDto {}
