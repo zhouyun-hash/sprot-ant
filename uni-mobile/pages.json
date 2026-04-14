@@ -1,0 +1,476 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "角色入口"
+      }
+    }
+  ],
+  "subPackages": [
+    {
+      "root": "packageTeacher",
+      "pages": [
+        {
+          "path": "pages/t01",
+          "style": {
+            "navigationBarTitleText": "登录"
+          }
+        },
+        {
+          "path": "pages/t02",
+          "style": {
+            "navigationBarTitleText": "首页"
+          }
+        },
+        {
+          "path": "pages/t03",
+          "style": {
+            "navigationBarTitleText": "我的班级"
+          }
+        },
+        {
+          "path": "pages/t04",
+          "style": {
+            "navigationBarTitleText": "课堂教学"
+          }
+        },
+        {
+          "path": "pages/t05",
+          "style": {
+            "navigationBarTitleText": "发起测试"
+          }
+        },
+        {
+          "path": "pages/t06",
+          "style": {
+            "navigationBarTitleText": "实时成绩"
+          }
+        },
+        {
+          "path": "pages/t07",
+          "style": {
+            "navigationBarTitleText": "投屏排行榜"
+          }
+        },
+        {
+          "path": "pages/t08",
+          "style": {
+            "navigationBarTitleText": "体测记录"
+          }
+        },
+        {
+          "path": "pages/t09",
+          "style": {
+            "navigationBarTitleText": "成绩查看"
+          }
+        },
+        {
+          "path": "pages/t10",
+          "style": {
+            "navigationBarTitleText": "异常提醒"
+          }
+        },
+        {
+          "path": "pages/t11",
+          "style": {
+            "navigationBarTitleText": "班级报告"
+          }
+        },
+        {
+          "path": "pages/t12",
+          "style": {
+            "navigationBarTitleText": "学生档案"
+          }
+        },
+        {
+          "path": "pages/t13",
+          "style": {
+            "navigationBarTitleText": "体质分析"
+          }
+        },
+        {
+          "path": "pages/t14",
+          "style": {
+            "navigationBarTitleText": "运动处方"
+          }
+        },
+        {
+          "path": "pages/t15",
+          "style": {
+            "navigationBarTitleText": "布置作业"
+          }
+        },
+        {
+          "path": "pages/t16",
+          "style": {
+            "navigationBarTitleText": "作业查看"
+          }
+        },
+        {
+          "path": "pages/t17",
+          "style": {
+            "navigationBarTitleText": "AI批改"
+          }
+        },
+        {
+          "path": "pages/t18",
+          "style": {
+            "navigationBarTitleText": "家校沟通"
+          }
+        },
+        {
+          "path": "pages/t19",
+          "style": {
+            "navigationBarTitleText": "消息通知"
+          }
+        },
+        {
+          "path": "pages/t20",
+          "style": {
+            "navigationBarTitleText": "运动安全预警"
+          }
+        },
+        {
+          "path": "pages/t21",
+          "style": {
+            "navigationBarTitleText": "个人中心"
+          }
+        },
+        {
+          "path": "pages/t22",
+          "style": {
+            "navigationBarTitleText": "修改密码"
+          }
+        },
+        {
+          "path": "pages/t23",
+          "style": {
+            "navigationBarTitleText": "帮助手册"
+          }
+        },
+        {
+          "path": "pages/t24",
+          "style": {
+            "navigationBarTitleText": "数据导出"
+          }
+        },
+        {
+          "path": "pages/t25",
+          "style": {
+            "navigationBarTitleText": "班级排名"
+          }
+        },
+        {
+          "path": "pages/t26",
+          "style": {
+            "navigationBarTitleText": "项目分析"
+          }
+        },
+        {
+          "path": "pages/t27",
+          "style": {
+            "navigationBarTitleText": "训练计划"
+          }
+        },
+        {
+          "path": "pages/t28",
+          "style": {
+            "navigationBarTitleText": "课堂小结"
+          }
+        },
+        {
+          "path": "pages/t29",
+          "style": {
+            "navigationBarTitleText": "学生打卡"
+          }
+        },
+        {
+          "path": "pages/t30",
+          "style": {
+            "navigationBarTitleText": "成绩对比"
+          }
+        },
+        {
+          "path": "pages/t31",
+          "style": {
+            "navigationBarTitleText": "视频回放"
+          }
+        },
+        {
+          "path": "pages/t32",
+          "style": {
+            "navigationBarTitleText": "设置"
+          }
+        }
+      ]
+    },
+    {
+      "root": "packageStudent",
+      "pages": [
+        {
+          "path": "pages/s01",
+          "style": {
+            "navigationBarTitleText": "登录人脸核验"
+          }
+        },
+        {
+          "path": "pages/s02",
+          "style": {
+            "navigationBarTitleText": "首页"
+          }
+        },
+        {
+          "path": "pages/s03",
+          "style": {
+            "navigationBarTitleText": "自主训练"
+          }
+        },
+        {
+          "path": "pages/s04",
+          "style": {
+            "navigationBarTitleText": "跳绳训练"
+          }
+        },
+        {
+          "path": "pages/s05",
+          "style": {
+            "navigationBarTitleText": "立定跳远"
+          }
+        },
+        {
+          "path": "pages/s06",
+          "style": {
+            "navigationBarTitleText": "仰卧起坐"
+          }
+        },
+        {
+          "path": "pages/s07",
+          "style": {
+            "navigationBarTitleText": "跑步测试"
+          }
+        },
+        {
+          "path": "pages/s08",
+          "style": {
+            "navigationBarTitleText": "实时计数"
+          }
+        },
+        {
+          "path": "pages/s09",
+          "style": {
+            "navigationBarTitleText": "动作提示"
+          }
+        },
+        {
+          "path": "pages/s10",
+          "style": {
+            "navigationBarTitleText": "成绩记录"
+          }
+        },
+        {
+          "path": "pages/s11",
+          "style": {
+            "navigationBarTitleText": "我的成绩"
+          }
+        },
+        {
+          "path": "pages/s12",
+          "style": {
+            "navigationBarTitleText": "体测查看"
+          }
+        },
+        {
+          "path": "pages/s13",
+          "style": {
+            "navigationBarTitleText": "体质报告"
+          }
+        },
+        {
+          "path": "pages/s14",
+          "style": {
+            "navigationBarTitleText": "弱项分析"
+          }
+        },
+        {
+          "path": "pages/s15",
+          "style": {
+            "navigationBarTitleText": "训练建议"
+          }
+        },
+        {
+          "path": "pages/s16",
+          "style": {
+            "navigationBarTitleText": "运动排行榜"
+          }
+        },
+        {
+          "path": "pages/s17",
+          "style": {
+            "navigationBarTitleText": "勋章中心"
+          }
+        },
+        {
+          "path": "pages/s18",
+          "style": {
+            "navigationBarTitleText": "打卡日历"
+          }
+        },
+        {
+          "path": "pages/s19",
+          "style": {
+            "navigationBarTitleText": "班级PK"
+          }
+        },
+        {
+          "path": "pages/s20",
+          "style": {
+            "navigationBarTitleText": "运动安全提醒"
+          }
+        },
+        {
+          "path": "pages/s21",
+          "style": {
+            "navigationBarTitleText": "个人信息"
+          }
+        },
+        {
+          "path": "pages/s22",
+          "style": {
+            "navigationBarTitleText": "历史记录"
+          }
+        },
+        {
+          "path": "pages/s23",
+          "style": {
+            "navigationBarTitleText": "消息通知"
+          }
+        },
+        {
+          "path": "pages/s24",
+          "style": {
+            "navigationBarTitleText": "设置"
+          }
+        }
+      ]
+    },
+    {
+      "root": "packageParent",
+      "pages": [
+        {
+          "path": "pages/p01",
+          "style": {
+            "navigationBarTitleText": "登录绑定"
+          }
+        },
+        {
+          "path": "pages/p02",
+          "style": {
+            "navigationBarTitleText": "孩子数据总览"
+          }
+        },
+        {
+          "path": "pages/p03",
+          "style": {
+            "navigationBarTitleText": "体测成绩"
+          }
+        },
+        {
+          "path": "pages/p04",
+          "style": {
+            "navigationBarTitleText": "体质评分"
+          }
+        },
+        {
+          "path": "pages/p05",
+          "style": {
+            "navigationBarTitleText": "运动趋势"
+          }
+        },
+        {
+          "path": "pages/p06",
+          "style": {
+            "navigationBarTitleText": "每日运动"
+          }
+        },
+        {
+          "path": "pages/p07",
+          "style": {
+            "navigationBarTitleText": "作业完成情况"
+          }
+        },
+        {
+          "path": "pages/p08",
+          "style": {
+            "navigationBarTitleText": "家庭训练建议"
+          }
+        },
+        {
+          "path": "pages/p09",
+          "style": {
+            "navigationBarTitleText": "月度报告"
+          }
+        },
+        {
+          "path": "pages/p10",
+          "style": {
+            "navigationBarTitleText": "学期报告"
+          }
+        },
+        {
+          "path": "pages/p11",
+          "style": {
+            "navigationBarTitleText": "消息通知"
+          }
+        },
+        {
+          "path": "pages/p12",
+          "style": {
+            "navigationBarTitleText": "班级动态"
+          }
+        },
+        {
+          "path": "pages/p13",
+          "style": {
+            "navigationBarTitleText": "安全提醒"
+          }
+        },
+        {
+          "path": "pages/p14",
+          "style": {
+            "navigationBarTitleText": "孩子档案"
+          }
+        },
+        {
+          "path": "pages/p15",
+          "style": {
+            "navigationBarTitleText": "绑定管理"
+          }
+        },
+        {
+          "path": "pages/p16",
+          "style": {
+            "navigationBarTitleText": "帮助"
+          }
+        },
+        {
+          "path": "pages/p17",
+          "style": {
+            "navigationBarTitleText": "设置"
+          }
+        },
+        {
+          "path": "pages/p18",
+          "style": {
+            "navigationBarTitleText": "健康建议"
+          }
+        }
+      ]
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "蚁数智动",
+    "navigationBarBackgroundColor": "#FFFFFF"
+  }
+}

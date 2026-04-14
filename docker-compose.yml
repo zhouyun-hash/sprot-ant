@@ -1,0 +1,25 @@
+# 蚁数智动智慧体育平台 — 本地/测试环境编排（MySQL 8 + Redis；后端/前端镜像可按 Dockerfile 扩展）
+# 首次启动 MySQL 后请执行：npm run db:migrate（根据实体建表/补列并写入默认 admin）
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: ant-sports-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: smart_sports
+      TZ: Asia/Shanghai
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./db/mysql_schema.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+  redis:
+    image: redis:7-alpine
+    container_name: ant-sports-redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  mysql_data: {}

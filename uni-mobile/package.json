@@ -1,0 +1,9 @@
+{
+  "name": "ant-sports-uni",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Uniapp：教师APP + 学生小程序 + 家长小程序。请使用 HBuilderX 打开本目录，或使用官方 @dcloudio/uni-app 脚手架升级依赖。",
+  "scripts": {
+    "predev": "node scripts/gen-pages.cjs"
+  }
+}

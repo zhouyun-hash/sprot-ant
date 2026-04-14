@@ -1,0 +1,20 @@
+{
+  "name": "蚁数智动智慧体育",
+  "appid": "__UNI__ANTSPORTS",
+  "description": "K12 AI 体育：教师端 / 学生端 / 家长端",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "vueVersion": "3",
+  "mp-weixin": {
+    "appid": "",
+    "setting": {
+      "urlCheck": false
+    }
+  },
+  "app-plus": {
+    "distribute": {
+      "android": {},
+      "ios": {}
+    }
+  }
+}

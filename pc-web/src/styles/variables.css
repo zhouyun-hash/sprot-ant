@@ -1,0 +1,179 @@
+:root {
+  /* ── 品牌色 ── */
+  --brand-primary: #1a73e8;
+  --brand-primary-light: #4fc3f7;
+  --brand-gradient: linear-gradient(135deg, #1a73e8, #4fc3f7);
+  --brand-gradient-vertical: linear-gradient(180deg, #1a237e, #1565c0);
+
+  /* ── 页面 ── */
+  --bg-page: #f0f5ff;
+  --bg-card: #ffffff;
+
+  /* ── 侧栏 ── */
+  --sidebar-width: 220px;
+  --sidebar-bg: linear-gradient(180deg, #0d1b3e, #1565c0);
+  --sidebar-text: rgba(255, 255, 255, 0.85);
+  --sidebar-text-active: #ffffff;
+  --sidebar-item-hover: rgba(255, 255, 255, 0.08);
+  --sidebar-item-active: rgba(255, 255, 255, 0.15);
+
+  /* ── Header ── */
+  --header-height: 56px;
+  --header-bg: #ffffff;
+  --header-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+
+  /* ── 卡片 ── */
+  --card-radius: 8px;
+  --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+
+  /* ── 表格 ── */
+  --table-header-bg: #e8f0fe;
+  --table-header-color: #1a3353;
+  --table-stripe-bg: #f7faff;
+
+  /* ── 覆盖 Element Plus 主题变量 ── */
+  --el-color-primary: #1a73e8;
+  --el-color-primary-light-3: #5a9ff0;
+  --el-color-primary-light-5: #8cbff5;
+  --el-color-primary-light-7: #bdd9f9;
+  --el-color-primary-light-8: #d4e7fb;
+  --el-color-primary-light-9: #eaf3fd;
+  --el-color-primary-dark-2: #155cc0;
+
+  --el-border-radius-base: 6px;
+  --el-border-radius-small: 4px;
+  --el-font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* ── 全局页面背景 ── */
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  font-family: var(--el-font-family);
+}
+
+/* ── 统一卡片风格 ── */
+.page-card {
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  border: none;
+}
+
+.page-card .el-card__header {
+  border-bottom: 1px solid #eef2f8;
+  padding: 14px 20px;
+}
+
+/* ── 统一表格风格 ── */
+.el-table th.el-table__cell {
+  background-color: var(--table-header-bg) !important;
+  color: var(--table-header-color);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.el-table--striped .el-table__body tr.el-table__row--striped td.el-table__cell {
+  background-color: var(--table-stripe-bg) !important;
+}
+
+/* ── 统一工具栏 ── */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toolbar > span {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a3353;
+}
+
+/* ── 统一分页器 ── */
+.pager {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ── 弹窗标题 ── */
+.el-dialog__header {
+  background: linear-gradient(135deg, #1a73e8, #4a9af5);
+  padding: 14px 20px !important;
+  margin-right: 0 !important;
+}
+
+.el-dialog__title {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.el-dialog__headerbtn .el-dialog__close {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* ── 按钮微调 ── */
+.el-button--primary {
+  --el-button-bg-color: var(--el-color-primary);
+  --el-button-border-color: var(--el-color-primary);
+}
+
+/* ── 深色侧栏子菜单修复 ── */
+.sidebar-menu .el-sub-menu .el-menu {
+  background-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+.sidebar-menu .el-sub-menu .el-menu .el-menu-item {
+  color: rgba(255, 255, 255, 0.75) !important;
+  background-color: transparent !important;
+}
+
+.sidebar-menu .el-sub-menu .el-menu .el-menu-item:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.sidebar-menu .el-sub-menu .el-menu .el-menu-item.is-active {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  font-weight: 600;
+}
+
+.sidebar-menu .el-sub-menu__title {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.sidebar-menu .el-sub-menu__title:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.sidebar-menu .el-sub-menu__title .el-sub-menu__icon-arrow {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.sidebar-menu .el-sub-menu__title i,
+.sidebar-menu .el-sub-menu__title .el-icon {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* 侧栏折叠时弹出菜单（挂在 body 上的 popup） */
+.el-menu--popup {
+  background-color: #0d2137 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  min-width: 180px;
+}
+
+.el-menu--popup .el-menu-item {
+  color: rgba(255, 255, 255, 0.85) !important;
+  background-color: transparent !important;
+}
+
+.el-menu--popup .el-menu-item:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.el-menu--popup .el-menu-item.is-active {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}

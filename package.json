@@ -1,0 +1,25 @@
+{
+  "name": "sprot-ant",
+  "private": true,
+  "description": "智慧体育：根目录聚合启动/构建脚本（backend · uni-vue3-app · pc-web）",
+  "scripts": {
+    "infra:up": "docker compose up -d",
+    "db:migrate": "npm run db:migrate:compat --prefix backend",
+    "infra:down": "docker compose down",
+    "infra:logs": "docker compose logs -f",
+    "install:all": "npm install --prefix backend && npm install --prefix uni-vue3-app && npm install --prefix pc-web",
+    "dev:backend": "npm --prefix backend run start:dev",
+    "dev:h5": "npm --prefix uni-vue3-app run dev:h5",
+    "dev:pc": "npm --prefix pc-web run dev",
+    "dev:uni:mp": "npm --prefix uni-vue3-app run dev:mp-weixin",
+    "dev:stack": "concurrently -n api,h5 -c blue,magenta \"npm run dev:backend\" \"npm run dev:h5\"",
+    "dev:all": "concurrently -n api,h5,pc -c blue,magenta,green \"npm run dev:backend\" \"npm run dev:h5\" \"npm run dev:pc\"",
+    "build:backend": "npm --prefix backend run build",
+    "build:uni:h5": "npm --prefix uni-vue3-app run build:h5",
+    "build:uni:mp": "npm --prefix uni-vue3-app run build:mp-weixin",
+    "build:pc": "npm --prefix pc-web run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "pages": [
+    {
+      "path": "pages/common/login",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    }
+  ],
+  "subPackages": [
+    {
+      "root": "pages/student",
+      "name": "student",
+      "pages": [
+        {
+          "path": "index",
+          "style": {
+            "navigationBarTitleText": "学生首页"
+          }
+        },
+        {
+          "path": "training/index",
+          "style": {
+            "navigationBarTitleText": "自主训练"
+          }
+        },
+        {
+          "path": "report/index",
+          "style": {
+            "navigationBarTitleText": "成绩报告"
+          }
+        },
+        {
+          "path": "rank/index",
+          "style": {
+            "navigationBarTitleText": "排行榜"
+          }
+        },
+        {
+          "path": "homework/index",
+          "style": {
+            "navigationBarTitleText": "体育作业"
+          }
+        },
+        {
+          "path": "homework/detail",
+          "style": {
+            "navigationBarTitleText": "作业详情"
+          }
+        },
+        {
+          "path": "simulation/index",
+          "style": {
+            "navigationBarTitleText": "中考模拟"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/parent",
+      "name": "parent",
+      "pages": [
+        {
+          "path": "index",
+          "style": {
+            "navigationBarTitleText": "家长首页"
+          }
+        },
+        {
+          "path": "detail",
+          "style": {
+            "navigationBarTitleText": "运动数据"
+          }
+        },
+        {
+          "path": "child-data/index",
+          "style": {
+            "navigationBarTitleText": "详细数据"
+          }
+        },
+        {
+          "path": "report/index",
+          "style": {
+            "navigationBarTitleText": "体质报告"
+          }
+        },
+        {
+          "path": "homework/index",
+          "style": {
+            "navigationBarTitleText": "体育作业"
+          }
+        },
+        {
+          "path": "homework/detail",
+          "style": {
+            "navigationBarTitleText": "作业详情"
+          }
+        },
+        {
+          "path": "homework/submit",
+          "style": {
+            "navigationBarTitleText": "提交作业"
+          }
+        }
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/common/login": {
+      "network": "all",
+      "packages": ["student", "parent"]
+    }
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "智慧体育",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#f5f5f5"
+  }
+}

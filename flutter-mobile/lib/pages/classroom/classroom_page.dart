@@ -1,0 +1,64 @@
+import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../utils/http.dart';
+import '../../widgets/base_list_page.dart';
+import '../../widgets/load_state_view.dart';
+
+class ClassroomPage extends StatefulWidget {
+  const ClassroomPage({super.key});
+
+  @override
+  State<ClassroomPage> createState() => _ClassroomPageState();
+}
+
+class _ClassroomPageState extends State<ClassroomPage> {
+  bool _loading = false;
+  String? _error;
+  List<dynamic> _items = const [];
+
+  @override
+  void initState() {
+    super.initState();
+    _loadData();
+  }
+
+  Future<void> _loadData() async {
+    setState(() {
+      _loading = true;
+      _error = null;
+    });
+    try {
+      final Response res = await Http.dio.get('/tasks', queryParameters: {'page': 1, 'pageSize': 10});
+      final data = res.data as Map<String, dynamic>? ?? {};
+      setState(() => _items = (data['items'] as List?) ?? const []);
+    } catch (_) {
+      setState(() => _error = '课堂教学数据加载失败');
+    } finally {
+      if (mounted) setState(() => _loading = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return LoadStateView(
+      loading: _loading,
+      error: _error,
+      isEmpty: _items.isEmpty,
+      emptyText: '暂无课堂任务',
+      onRefresh: _loadData,
+      child: BaseListPage<dynamic>(
+        items: _items,
+        itemBuilder: (_, item, __) {
+          final data = item as Map<String, dynamic>;
+          return ListTile(
+            title: Text(data['name']?.toString() ?? '未命名任务'),
+            subtitle: Text('类型：${data['type'] ?? '-'}'),
+            onTap: () => Get.toNamed('/classroom/detail', arguments: data),
+          );
+        },
+      ),
+    );
+  }
+}

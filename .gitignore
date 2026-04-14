@@ -1,0 +1,74 @@
+# ========================
+# 依赖目录
+# ========================
+node_modules/
+.venv/
+venv/
+
+# ========================
+# 环境变量（保留 .example 模板）
+# ========================
+.env
+.env.local
+.env.development
+.env.production
+.env.staging
+.env.*.local
+!.env.example
+
+# ========================
+# 构建产物
+# ========================
+dist/
+build/
+.next/
+.nuxt/
+.output/
+.dart_tool/
+
+# ========================
+# Python
+# ========================
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# ========================
+# IDE / 编辑器
+# ========================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.cursor/
+
+# ========================
+# 系统文件
+# ========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ========================
+# 日志
+# ========================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ========================
+# 临时/生成的大文件
+# ========================
+pdf_page_1.png
+
+# ========================
+# Flutter
+# ========================
+flutter-mobile/.dart_tool/
+flutter-mobile/build/
+flutter-mobile/.flutter-plugins
+flutter-mobile/.flutter-plugins-dependencies
+flutter-mobile/.packages
