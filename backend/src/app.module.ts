@@ -61,10 +61,12 @@ import { HelpModule } from './help/help.module';
         password: config.get<string>('DB_PASSWORD', ''),
         database: config.get<string>('DB_DATABASE', 'smart_sports'),
         autoLoadEntities: true,
-        // 本地常见误设 NODE_ENV=production 导致不同步；可设 DB_SYNC=true 强制对齐（生产务必 false）
-        synchronize:
-          config.get<string>('DB_SYNC') === 'true' ||
-          config.get<string>('NODE_ENV') !== 'production',
+        // 已启用 TypeORM migrations，synchronize 统一关闭
+        // 如需紧急同步可设 DB_SYNC=true（生产环境严禁开启）
+        synchronize: config.get<string>('DB_SYNC') === 'true',
+        // 应用启动时自动执行未运行的迁移（可通过 DB_MIGRATIONS_RUN=false 关闭）
+        migrationsRun: config.get<string>('DB_MIGRATIONS_RUN') !== 'false',
+        migrations: [__dirname + '/migrations/*{.ts,.js}'],
         logging: config.get<string>('DB_LOGGING') === 'true',
         extra: { decimalNumbers: true },
       }),
